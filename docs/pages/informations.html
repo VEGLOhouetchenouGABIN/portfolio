@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Centre d'informations sur les Violences Basées sur le Genre - Droits, lois et ressources disponibles au Bénin">
+    <title>Centre d'informations VBG | Plateforme VBG Bénin</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../pages/pages.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-shield-heart"></i>
+                    <span>VBG Bénin</span>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Menu mobile">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="informations.html" class="active"><i class="fas fa-info-circle"></i> Informations</a></li>
+                    <li><a href="denonciation.html"><i class="fas fa-exclamation-triangle"></i> Dénonciation</a></li>
+                    <li><a href="temoignages.html"><i class="fas fa-comment-dots"></i> Témoignages</a></li>
+                    <li><a href="chatbot.html"><i class="fas fa-robot"></i> Chatbot</a></li>
+                    <li><a href="annuaire.html"><i class="fas fa-phone-alt"></i> Annuaire</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                
+                <div class="language-selector">
+                    <select id="language-select">
+                        <option value="fr">Français</option>
+                        <option value="fon">Fon</option>
+                        <option value="yo">Yoruba</option>
+                        <option value="dd">Dendi</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Centre d'informations sur les VBG</h1>
+            <p class="page-subtitle">Informations fiables sur les types de violences, vos droits, les lois et les recours disponibles au Bénin</p>
+        </div>
+    </header>
+
+    <!-- Urgence Banner -->
+    <section class="urgence-banner">
+        <div class="container">
+            <div class="urgence-content">
+                <div class="urgence-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="urgence-text">
+                    <h3>Besoin d'aide immédiate ?</h3>
+                    <p>Appelez le numéro vert national : <strong>138</strong> (24h/24 et 7j/7)</p>
+                </div>
+                <div class="urgence-button">
+                    <a href="annuaire.html" class="btn btn-urgence">Voir tous les numéros d'urgence</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Information Categories -->
+    <section class="info-section">
+        <div class="container">
+            <!-- Types de VBG -->
+            <div class="info-category">
+                <h2 class="category-title">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Types de Violences Basées sur le Genre
+                </h2>
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <i class="fas fa-brain"></i>
+                            <h3>Violence psychologique</h3>
+                        </div>
+                        <div class="info-card-body">
+                            <p>Insultes, menaces, humiliation, chantage, contrôle des relations sociales, dévalorisation.</p>
+                            <ul>
+                                <li>Exemples : menaces de répudiation, isolement, contrôle des déplacements</li>
+                                <li>Impact : dépression, anxiété, perte d'estime de soi</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <i class="fas fa-fist-raised"></i>
+                            <h3>Violence physique</h3>
+                        </div>
+                        <div class="info-card-body">
+                            <p>Coups, gifles, brûlures, mutilations, séquestration, tentative de meurtre.</p>
+                            <ul>
+                                <li>Exemples : gifles, coups de pied, brûlures avec des objets</li>
+                                <li>Impact : blessures, handicaps permanents, décès</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <h3>Violence économique</h3>
+                        </div>
+                        <div class="info-card-body">
+                            <p>Contrôle des ressources, privation de moyens de subsistance, exploitation financière.</p>
+                            <ul>
+                                <li>Exemples : confiscation de revenus, interdiction de travailler</li>
+                                <li>Impact : dépendance financière, pauvreté</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <i class="fas fa-user-shield"></i>
+                            <h3>Violence sexuelle</h3>
+                        </div>
+                        <div class="info-card-body">
+                            <p>Viol, harcèlement sexuel, mariage forcé, mutilations génitales, exploitation sexuelle.</p>
+                            <ul>
+                                <li>Exemples : relations sexuelles non consenties, attouchements</li>
+                                <li>Impact : traumatismes, grossesses non désirées, IST</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Droits et Lois -->
+            <div class="info-category">
+                <h2 class="category-title">
+                    <i class="fas fa-balance-scale"></i>
+                    Droits et Lois en vigueur au Bénin
+                </h2>
+                <div class="legal-cards">
+                    <div class="legal-card">
+                        <h3>Loi n°2011-26 du 09 janvier 2012</h3>
+                        <p>Relative à la prévention et à la répression des violences faites aux femmes.</p>
+                        <a href="#" class="download-link">
+                            <i class="fas fa-download"></i> Télécharger le texte
+                        </a>
+                    </div>
+                    
+                    <div class="legal-card">
+                        <h3>Code pénal béninois</h3>
+                        <p>Sanctionne les violences, les agressions sexuelles et le harcèlement.</p>
+                        <a href="#" class="download-link">
+                            <i class="fas fa-download"></i> Télécharger le texte
+                        </a>
+                    </div>
+                    
+                    <div class="legal-card">
+                        <h3>Loi n°2002-07 du 24 août 2002</h3>
+                        <p>Relative à la santé de la reproduction et à la planification familiale.</p>
+                        <a href="#" class="download-link">
+                            <i class="fas fa-download"></i> Télécharger le texte
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Procédures -->
+            <div class="info-category">
+                <h2 class="category-title">
+                    <i class="fas fa-clipboard-list"></i>
+                    Comment porter plainte ?
+                </h2>
+                <div class="procedure-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Consulter un médecin</h3>
+                            <p>Faites constater vos blessures dans un centre de santé pour obtenir un certificat médical.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Rassembler les preuves</h3>
+                            <p>Conservez les messages, photos, témoignages, certificats médicaux.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Déposer plainte</h3>
+                            <p>Rendez-vous au commissariat ou à la gendarmerie avec vos preuves.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Suivi juridique</h3>
+                            <p>Contactez une ONG d'aide juridique pour vous accompagner dans la procédure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ressources Téléchargeables -->
+            <div class="info-category">
+                <h2 class="category-title">
+                    <i class="fas fa-file-download"></i>
+                    Ressources téléchargeables
+                </h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>Guide des démarches</h3>
+                        <p>Document expliquant pas à pas les démarches à suivre en cas de violence.</p>
+                        <button class="btn-download" data-file="guide-demarches.pdf">
+                            <i class="fas fa-download"></i> Télécharger
+                        </button>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-passport"></i>
+                        </div>
+                        <h3>Mes droits en images</h3>
+                        <p>Brochure illustrée expliquant vos droits en langues locales.</p>
+                        <button class="btn-download" data-file="droits-images.pdf">
+                            <i class="fas fa-download"></i> Télécharger
+                        </button>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Annuaire des services</h3>
+                        <p>Liste complète des services d'aide disponibles dans toutes les régions.</p>
+                        <button class="btn-download" data-file="annuaire-services.pdf">
+                            <i class="fas fa-download"></i> Télécharger
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-shield-heart"></i>
+                        <span>VBG Bénin</span>
+                    </div>
+                    <p class="footer-description">
+                        Plateforme nationale d'information, de dénonciation anonyme et d'accompagnement des victimes de Violences Basées sur le Genre au Bénin.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Liens rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="informations.html">Informations sur les VBG</a></li>
+                        <li><a href="denonciation.html">Dénonciation anonyme</a></li>
+                        <li><a href="temoignages.html">Espace témoignages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="chatbot.html">Chatbot d'assistance</a></li>
+                        <li><a href="annuaire.html">Annuaire des services</a></li>
+                        <li><a href="contact.html">Contactez-nous</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone-alt"></i> Numéro vert : <strong>138</strong></li>
+                        <li><i class="fas fa-envelope"></i> Email : contact@vgb-benin.bj</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Cotonou, Bénin</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Plateforme VBG Bénin. Tous droits réservés.</p>
+                <p>Ce site respecte votre anonymat et protège vos données.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick Help Button -->
+    <button class="quick-help-btn" aria-label="Aide rapide">
+        <i class="fas fa-question-circle"></i>
+        <span>Aide</span>
+    </button>
+
+    <script src="../script.js"></script>
+    <script src="pages.js"></script>
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chatbot d'assistance 24/7 pour répondre à vos questions sur les Violences Basées sur le Genre">
+    <title>Chatbot d'assistance | Plateforme VBG Bénin</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../pages/pages.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-shield-heart"></i>
+                    <span>VBG Bénin</span>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Menu mobile">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="informations.html"><i class="fas fa-info-circle"></i> Informations</a></li>
+                    <li><a href="denonciation.html"><i class="fas fa-exclamation-triangle"></i> Dénonciation</a></li>
+                    <li><a href="temoignages.html"><i class="fas fa-comment-dots"></i> Témoignages</a></li>
+                    <li><a href="chatbot.html" class="active"><i class="fas fa-robot"></i> Chatbot</a></li>
+                    <li><a href="annuaire.html"><i class="fas fa-phone-alt"></i> Annuaire</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                
+                <div class="language-selector">
+                    <select id="language-select">
+                        <option value="fr">Français</option>
+                        <option value="fon">Fon</option>
+                        <option value="yo">Yoruba</option>
+                        <option value="dd">Dendi</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Chatbot d'assistance</h1>
+            <p class="page-subtitle">Posez vos questions anonymement et obtenez des réponses immédiates 24h/24 et 7j/7</p>
+        </div>
+    </header>
+
+    <!-- Urgence Banner -->
+    <section class="urgence-banner">
+        <div class="container">
+            <div class="urgence-content">
+                <div class="urgence-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="urgence-text">
+                    <h3>Situation d'urgence ?</h3>
+                    <p>Appelez directement le numéro vert : <strong>138</strong> ou la police : <strong>117</strong></p>
+                </div>
+                <div class="urgence-button">
+                    <a href="annuaire.html" class="btn btn-urgence">Voir tous les numéros d'urgence</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot Section -->
+    <section class="chatbot-section">
+        <div class="container">
+            <div class="chatbot-container">
+                <!-- Sidebar avec informations -->
+                <aside class="chatbot-sidebar">
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-info-circle"></i> À propos du chatbot</h3>
+                        <p>Notre chatbot utilise une approche d'écoute active non thérapeutique pour vous orienter vers les ressources appropriées.</p>
+                        <ul class="chatbot-features">
+                            <li><i class="fas fa-check-circle"></i> Réponses 24/7</li>
+                            <li><i class="fas fa-check-circle"></i> Langage inclusif</li>
+                            <li><i class="fas fa-check-circle"></i> Orientation personnalisée</li>
+                            <li><i class="fas fa-check-circle"></i> Transfert vers humain si besoin</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-shield-alt"></i> Confidentialité</h3>
+                        <p>Votre conversation est anonyme et chiffrée. Aucune donnée personnelle n'est collectée ou stockée.</p>
+                    </div>
+                    
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-question-circle"></i> Questions fréquentes</h3>
+                        <div class="faq-list">
+                            <button class="faq-question">Quels sont mes droits ?</button>
+                            <button class="faq-question">Comment porter plainte ?</button>
+                            <button class="faq-question">Où trouver un centre d'aide ?</button>
+                            <button class="faq-question">Comment aider un proche ?</button>
+                        </div>
+                    </div>
+                </aside>
+                
+                <!-- Interface du chatbot -->
+                <main class="chatbot-interface">
+                    <div class="chatbot-header">
+                        <div class="chatbot-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="chatbot-info">
+                            <h3>Assistante VBG</h3>
+                            <span class="status-indicator online">
+                                <i class="fas fa-circle"></i> En ligne
+                            </span>
+                        </div>
+                        <div class="chatbot-actions">
+                            <button class="action-btn" title="Nouvelle conversation" id="new-chat">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="action-btn" title="Paramètres" id="chat-settings">
+                                <i class="fas fa-cog"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Messages du chat -->
+                    <div class="chatbot-messages" id="chat-messages">
+                        <!-- Messages initiaux -->
+                        <div class="message bot">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <p>Bonjour, je suis l'assistante VBG. Je suis là pour vous écouter et vous orienter vers les ressources appropriées.</p>
+                                <p>Comment puis-je vous aider aujourd'hui ?</p>
+                                <span class="message-time">12:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="message bot">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <p>Voici quelques questions que je peux vous aider à résoudre :</p>
+                                <div class="quick-questions">
+                                    <button class="quick-question" data-question="Quels sont mes droits en cas de violence ?">
+                                        Quels sont mes droits ?
+                                    </button>
+                                    <button class="quick-question" data-question="Comment signaler une violence anonymement ?">
+                                        Comment signaler ?
+                                    </button>
+                                    <button class="quick-question" data-question="Où trouver un centre médical ?">
+                                        Trouver un centre d'aide
+                                    </button>
+                                    <button class="quick-question" data-question="Comment aider un proche victime ?">
+                                        Aider un proche
+                                    </button>
+                                </div>
+                                <span class="message-time">12:01</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Zone de saisie -->
+                    <div class="chatbot-input">
+                        <div class="input-wrapper">
+                            <textarea 
+                                id="chat-input" 
+                                placeholder="Tapez votre message ici... (votre conversation est anonyme)" 
+                                rows="1"
+                            ></textarea>
+                            <div class="input-actions">
+                                <button class="input-action-btn" title="Joindre un fichier">
+                                    <i class="fas fa-paperclip"></i>
+                                </button>
+                                <button class="input-action-btn" title="Émoticônes">
+                                    <i class="far fa-smile"></i>
+                                </button>
+                                <button class="btn btn-primary" id="send-message">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="input-footer">
+                            <span class="privacy-notice">
+                                <i class="fas fa-lock"></i> Conversation anonyme et chiffrée
+                            </span>
+                            <button class="btn-transfer" id="transfer-human">
+                                <i class="fas fa-user"></i> Parler à un humain
+                            </button>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informations supplémentaires -->
+    <section class="chatbot-info-section">
+        <div class="container">
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Écoute active</h3>
+                    <p>Notre chatbot est formé à l'écoute active non thérapeutique. Il vous oriente vers les ressources appropriées.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Anonymat garanti</h3>
+                    <p>Aucune donnée personnelle n'est collectée. Votre conversation est chiffrée et effacée après 24h.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Transfert humain</h3>
+                    <p>En cas de besoin, vous pouvez être transféré(e) vers un assistant social ou un psychologue partenaire.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Multilingue</h3>
+                    <p>Le chatbot comprend le français et sera bientôt disponible en Fon, Yoruba et Dendi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Limitations -->
+    <section class="limitations-section">
+        <div class="container">
+            <div class="limitations-card">
+                <h3><i class="fas fa-exclamation-triangle"></i> Important à savoir</h3>
+                <p>Le chatbot n'est pas un service d'urgence. En cas de danger immédiat, appelez :</p>
+                <div class="emergency-numbers">
+                    <div class="emergency-number">
+                        <strong>138</strong>
+                        <span>Numéro vert VBG</span>
+                    </div>
+                    <div class="emergency-number">
+                        <strong>117</strong>
+                        <span>Police</span>
+                    </div>
+                    <div class="emergency-number">
+                        <strong>112</strong>
+                        <span>Urgences médicales</span>
+                    </div>
+                </div>
+                <p class="warning-text">Le chatbot ne remplace pas une consultation médicale ou psychologique.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-shield-heart"></i>
+                        <span>VBG Bénin</span>
+                    </div>
+                    <p class="footer-description">
+                        Plateforme nationale d'information, de dénonciation anonyme et d'accompagnement des victimes de Violences Basées sur le Genre au Bénin.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Liens rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="informations.html">Informations sur les VBG</a></li>
+                        <li><a href="denonciation.html">Dénonciation anonyme</a></li>
+                        <li><a href="temoignages.html">Espace témoignages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="chatbot.html">Chatbot d'assistance</a></li>
+                        <li><a href="annuaire.html">Annuaire des services</a></li>
+                        <li><a href="contact.html">Contactez-nous</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone-alt"></i> Numéro vert : <strong>138</strong></li>
+                        <li><i class="fas fa-envelope"></i> Email : contact@vgb-benin.bj</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Cotonou, Bénin</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Plateforme VBG Bénin. Tous droits réservés.</p>
+                <p>Ce site respecte votre anonymat et protège vos données.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de transfert vers humain -->
+    <div id="human-transfer-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-user"></i> Parler à un humain</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="transfer-options">
+                    <div class="transfer-option">
+                        <div class="option-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="option-content">
+                            <h3>Appel téléphonique</h3>
+                            <p>Parlez directement à un assistant social ou psychologue.</p>
+                            <button class="btn btn-primary">
+                                Appeler le 138
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="transfer-option">
+                        <div class="option-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="option-content">
+                            <h3>Rendez-vous en ligne</h3>
+                            <p>Prenez rendez-vous pour une consultation en ligne sécurisée.</p>
+                            <button class="btn btn-secondary">
+                                Prendre rendez-vous
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="transfer-option">
+                        <div class="option-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="option-content">
+                            <h3>Rencontre en personne</h3>
+                            <p>Trouvez un centre d'écoute près de chez vous.</p>
+                            <a href="annuaire.html" class="btn btn-secondary">
+                                Trouver un centre
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Help Button -->
+    <button class="quick-help-btn" aria-label="Aide rapide">
+        <i class="fas fa-question-circle"></i>
+        <span>Aide</span>
+    </button>
+
+    <script src="../script.js"></script>
+    <script src="pages.js"></script>
+    <script>
+        // Script spécifique au chatbot
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.getElementById('chat-messages');
+            const chatInput = document.getElementById('chat-input');
+            const sendBtn = document.getElementById('send-message');
+            const newChatBtn = document.getElementById('new-chat');
+            const transferBtn = document.getElementById('transfer-human');
+            const transferModal = document.getElementById('human-transfer-modal');
+            const quickQuestions = document.querySelectorAll('.quick-question');
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            // Base de connaissances du chatbot (simplifiée)
+            const chatbotResponses = {
+                'droits': {
+                    response: "En cas de violence, vous avez le droit :\n1. À la sécurité et à la protection\n2. De porter plainte à la police/gendarmerie\n3. À une assistance médicale et psychologique\n4. À un hébergement d'urgence si nécessaire\n5. À un accompagnement juridique\n\nVoulez-vous plus d'informations sur un point spécifique ?",
+                    followUp: true
+                },
+                'signaler': {
+                    response: "Vous pouvez signaler une violence de plusieurs façons :\n1. Appelez le 138 (numéro vert VBG)\n2. Utilisez le formulaire de dénonciation anonyme sur notre site\n3. Rendez-vous au commissariat ou à la gendarmerie\n4. Contactez une ONG spécialisée\n\nLe formulaire anonyme est disponible ici : <a href='denonciation.html' class='chat-link'>Formulaire de dénonciation</a>",
+                    followUp: true
+                },
+                'centre': {
+                    response: "Il existe plusieurs types de centres d'aide :\n1. Centres médicaux pour les constatations\n2. Centres psychosociaux pour le soutien\n3. Centres d'hébergement d'urgence\n4. Services juridiques gratuits\n\nJe peux vous orienter vers un centre près de chez vous. Dans quel département vous trouvez-vous ?",
+                    followUp: true
+                },
+                'proche': {
+                    response: "Pour aider un proche victime de violence :\n1. Écoutez sans jugement\n2. Croyez-le/la et validez ses sentiments\n3. Ne minimisez pas la situation\n4. Proposez votre soutien concret\n5. Orientez vers des professionnels\n6. Respectez ses décisions\n\nVoulez-vous des conseils plus spécifiques ?",
+                    followUp: true
+                },
+                'urgence': {
+                    response: "⚠️ <strong>Si vous êtes en danger immédiat</strong>, appelez :\n• Police : 117\n• Numéro vert VBG : 138\n• Urgences médicales : 112\n\nCes services sont disponibles 24h/24.",
+                    followUp: false
+                },
+                'plainte': {
+                    response: "Pour porter plainte :\n1. Faites constater vos blessures par un médecin\n2. Rassemblez les preuves (messages, photos, témoins)\n3. Rendez-vous au commissariat ou à la gendarmerie\n4. Vous pouvez vous faire accompagner par une ONG\n\nPlus d'informations ici : <a href='informations.html' class='chat-link'>Centre d'informations</a>",
+                    followUp: true
+                },
+                'default': {
+                    response: "Je comprends votre question. Pour vous orienter au mieux, pourriez-vous me donner plus de détails ? Si vous préférez, vous pouvez :\n1. Consulter notre centre d'informations\n2. Utiliser notre formulaire de dénonciation anonyme\n3. Parler à un assistant humain\n\nComment puis-je vous aider plus précisément ?",
+                    followUp: true
+                }
+            };
+            
+            // Fonction pour ajouter un message
+            function addMessage(content, isUser = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+                
+                const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                
+                messageDiv.innerHTML = `
+                    <div class="message-avatar">
+                        <i class="fas fa-${isUser ? 'user' : 'robot'}"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>${content.replace(/\n/g, '<br>')}</p>
+                        <span class="message-time">${time}</span>
+                    </div>
+                `;
+                
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Fonction pour trouver la réponse appropriée
+            function findResponse(userMessage) {
+                const lowerMessage = userMessage.toLowerCase();
+                
+                if (lowerMessage.includes('urgence') || lowerMessage.includes('danger')) {
+                    return chatbotResponses.urgence;
+                } else if (lowerMessage.includes('droit')) {
+                    return chatbotResponses.droits;
+                } else if (lowerMessage.includes('signaler') || lowerMessage.includes('dénoncer')) {
+                    return chatbotResponses.signaler;
+                } else if (lowerMessage.includes('centre') || lowerMessage.includes('aide') || lowerMessage.includes('médecin')) {
+                    return chatbotResponses.centre;
+                } else if (lowerMessage.includes('proche') || lowerMessage.includes('ami') || lowerMessage.includes('famil')) {
+                    return chatbotResponses.proche;
+                } else if (lowerMessage.includes('plainte') || lowerMessage.includes('police')) {
+                    return chatbotResponses.plainte;
+                } else {
+                    return chatbotResponses.default;
+                }
+            }
+            
+            // Envoyer un message
+            function sendMessage() {
+                const message = chatInput.value.trim();
+                if (!message) return;
+                
+                // Ajouter le message de l'utilisateur
+                addMessage(message, true);
+                chatInput.value = '';
+                
+                // Simuler un délai de réponse
+                setTimeout(() => {
+                    const response = findResponse(message);
+                    addMessage(response.response);
+                    
+                    // Si besoin de suivi, ajouter des options de suivi
+                    if (response.followUp) {
+                        setTimeout(() => {
+                            addMessage("Avez-vous d'autres questions ? Vous pouvez aussi :\n1. Consulter nos ressources\n2. Parler à un assistant humain\n3. Explorer d'autres sujets");
+                        }, 1000);
+                    }
+                }, 1000);
+            }
+            
+            // Événements
+            if (sendBtn && chatInput) {
+                sendBtn.addEventListener('click', sendMessage);
+                
+                chatInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        sendMessage();
+                    }
+                });
+                
+                // Auto-resize du textarea
+                chatInput.addEventListener('input', function() {
+                    this.style.height = 'auto';
+                    this.style.height = (this.scrollHeight) + 'px';
+                });
+            }
+            
+            // Nouvelle conversation
+            if (newChatBtn) {
+                newChatBtn.addEventListener('click', function() {
+                    if (confirm('Voulez-vous commencer une nouvelle conversation ? L'historique actuel sera effacé.')) {
+                        chatMessages.innerHTML = `
+                            <div class="message bot">
+                                <div class="message-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="message-content">
+                                    <p>Bonjour, je suis l'assistante VBG. Je suis là pour vous écouter et vous orienter vers les ressources appropriées.</p>
+                                    <p>Comment puis-je vous aider aujourd'hui ?</p>
+                                    <span class="message-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+            }
+            
+            // Questions rapides
+            quickQuestions.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const question = this.getAttribute('data-question');
+                    chatInput.value = question;
+                    sendMessage();
+                });
+            });
+            
+            // Questions FAQ
+            faqQuestions.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const questionText = this.textContent;
+                    chatInput.value = questionText;
+                    sendMessage();
+                });
+            });
+            
+            // Transfert vers humain
+            if (transferBtn && transferModal) {
+                transferBtn.addEventListener('click', function() {
+                    transferModal.style.display = 'block';
+                });
+                
+                // Fermer la modal
+                const modalClose = transferModal.querySelector('.modal-close');
+                if (modalClose) {
+                    modalClose.addEventListener('click', function() {
+                        transferModal.style.display = 'none';
+                    });
+                }
+                
+                window.addEventListener('click', function(e) {
+                    if (e.target === transferModal) {
+                        transferModal.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

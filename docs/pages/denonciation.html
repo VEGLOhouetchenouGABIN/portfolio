@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulaire de dénonciation anonyme des Violences Basées sur le Genre au Bénin">
+    <title>Dénonciation anonyme | Plateforme VBG Bénin</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../pages/pages.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-shield-heart"></i>
+                    <span>VBG Bénin</span>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Menu mobile">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="informations.html"><i class="fas fa-info-circle"></i> Informations</a></li>
+                    <li><a href="denonciation.html" class="active"><i class="fas fa-exclamation-triangle"></i> Dénonciation</a></li>
+                    <li><a href="temoignages.html"><i class="fas fa-comment-dots"></i> Témoignages</a></li>
+                    <li><a href="chatbot.html"><i class="fas fa-robot"></i> Chatbot</a></li>
+                    <li><a href="annuaire.html"><i class="fas fa-phone-alt"></i> Annuaire</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                
+                <div class="language-selector">
+                    <select id="language-select">
+                        <option value="fr">Français</option>
+                        <option value="fon">Fon</option>
+                        <option value="yo">Yoruba</option>
+                        <option value="dd">Dendi</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Dénonciation anonyme</h1>
+            <p class="page-subtitle">Signalez une situation de violence sans révéler votre identité. Vos données sont protégées et chiffrées.</p>
+        </div>
+    </header>
+
+    <!-- Urgence Banner -->
+    <section class="urgence-banner">
+        <div class="container">
+            <div class="urgence-content">
+                <div class="urgence-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="urgence-text">
+                    <h3>Situation d'urgence immédiate ?</h3>
+                    <p>Appelez directement le numéro vert : <strong>138</strong> ou la police : <strong>117</strong></p>
+                </div>
+                <div class="urgence-button">
+                    <a href="annuaire.html" class="btn btn-urgence">Voir tous les numéros d'urgence</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Notice -->
+    <section class="security-notice">
+        <div class="container">
+            <div class="security-card">
+                <div class="security-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="security-content">
+                    <h3>Votre anonymat est garanti</h3>
+                    <p>Ce formulaire ne collecte aucune information personnelle. Toutes les données sont chiffrées et les métadonnées sont automatiquement effacées.</p>
+                    <div class="security-features">
+                        <span><i class="fas fa-check-circle"></i> Aucune collecte d'identité</span>
+                        <span><i class="fas fa-check-circle"></i> Chiffrement des données</span>
+                        <span><i class="fas fa-check-circle"></i> Modérateurs formés</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reporting Form -->
+    <section class="reporting-section">
+        <div class="container">
+            <form id="reporting-form" class="sensitive-form">
+                <!-- Type de violence -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <i class="fas fa-exclamation-circle"></i>
+                        Type de violence
+                    </h2>
+                    <div class="violence-types">
+                        <div class="violence-type-option">
+                            <input type="checkbox" id="violence-physique" name="violence-type" value="physique">
+                            <label for="violence-physique">
+                                <i class="fas fa-fist-raised"></i>
+                                <span>Violence physique</span>
+                                <small>Coups, blessures, séquestration</small>
+                            </label>
+                        </div>
+                        
+                        <div class="violence-type-option">
+                            <input type="checkbox" id="violence-psychologique" name="violence-type" value="psychologique">
+                            <label for="violence-psychologique">
+                                <i class="fas fa-brain"></i>
+                                <span>Violence psychologique</span>
+                                <small>Menaces, humiliation, contrôle</small>
+                            </label>
+                        </div>
+                        
+                        <div class="violence-type-option">
+                            <input type="checkbox" id="violence-sexuelle" name="violence-type" value="sexuelle">
+                            <label for="violence-sexuelle">
+                                <i class="fas fa-user-shield"></i>
+                                <span>Violence sexuelle</span>
+                                <small>Viol, harcèlement, attouchements</small>
+                            </label>
+                        </div>
+                        
+                        <div class="violence-type-option">
+                            <input type="checkbox" id="violence-economique" name="violence-type" value="economique">
+                            <label for="violence-economique">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Violence économique</span>
+                                <small>Contrôle financier, privation</small>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Informations sur la situation -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <i class="fas fa-info-circle"></i>
+                        Description de la situation
+                    </h2>
+                    
+                    <div class="form-group">
+                        <label for="situation-description">Décrivez la situation *</label>
+                        <textarea id="situation-description" name="situation-description" rows="5" placeholder="Décrivez ce qui s'est passé, quand, où... (ne mettez pas de noms)" required></textarea>
+                        <div class="char-counter">
+                            <span id="char-count">0</span> / 1000 caractères
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="concerned-person">Personne concernée</label>
+                        <select id="concerned-person" name="concerned-person">
+                            <option value="">Sélectionnez</option>
+                            <option value="myself">Moi-même</option>
+                            <option value="family">Un membre de ma famille</option>
+                            <option value="friend">Un(e) ami(e)</option>
+                            <option value="neighbor">Un(e) voisin(e)</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="urgency-level">Niveau d'urgence</label>
+                        <div class="urgency-levels">
+                            <div class="urgency-option">
+                                <input type="radio" id="urgency-low" name="urgency" value="low">
+                                <label for="urgency-low">
+                                    <span class="urgency-indicator low"></span>
+                                    Faible
+                                </label>
+                            </div>
+                            <div class="urgency-option">
+                                <input type="radio" id="urgency-medium" name="urgency" value="medium">
+                                <label for="urgency-medium">
+                                    <span class="urgency-indicator medium"></span>
+                                    Moyen
+                                </label>
+                            </div>
+                            <div class="urgency-option">
+                                <input type="radio" id="urgency-high" name="urgency" value="high">
+                                <label for="urgency-high">
+                                    <span class="urgency-indicator high"></span>
+                                    Élevé
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Localisation -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Localisation (optionnelle)
+                    </h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="department">Département</label>
+                            <select id="department" name="department">
+                                <option value="">Sélectionnez un département</option>
+                                <option value="atlantique">Atlantique</option>
+                                <option value="littoral">Littoral</option>
+                                <option value="oueme">Ouémé</option>
+                                <option value="plateau">Plateau</option>
+                                <option value="zou">Zou</option>
+                                <option value="borgou">Borgou</option>
+                                <option value="alibori">Alibori</option>
+                                <option value="atacora">Atacora</option>
+                                <option value="donga">Donga</option>
+                                <option value="collines">Collines</option>
+                                <option value="kouffo">Kouffo</option>
+                                <option value="mono">Mono</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="commune">Commune</label>
+                            <select id="commune" name="commune" disabled>
+                                <option value="">Sélectionnez d'abord le département</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Orientation souhaitée -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <i class="fas fa-hands-helping"></i>
+                        Orientation souhaitée
+                    </h2>
+                    
+                    <div class="form-group">
+                        <label for="orientation-type">Type d'aide recherchée</label>
+                        <select id="orientation-type" name="orientation-type">
+                            <option value="">Sélectionnez</option>
+                            <option value="medical">Aide médicale</option>
+                            <option value="psychological">Soutien psychologique</option>
+                            <option value="legal">Accompagnement juridique</option>
+                            <option value="shelter">Hébergement d'urgence</option>
+                            <option value="information">Informations seulement</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-preference">Comment souhaitez-vous être contacté(e) ?</label>
+                        <select id="contact-preference" name="contact-preference">
+                            <option value="none">Ne pas me contacter</option>
+                            <option value="email">Email anonyme</option>
+                            <option value="chat">Chat sécurisé sur la plateforme</option>
+                            <option value="phone">Numéro masqué (appel uniquement)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group contact-method" id="email-field" style="display: none;">
+                        <label for="anonymous-email">Email anonyme *</label>
+                        <input type="email" id="anonymous-email" name="anonymous-email" placeholder="exemple@provider.com">
+                        <small class="hint">Utilisez une adresse email qui ne révèle pas votre identité</small>
+                    </div>
+                </div>
+                
+                <!-- Confidentialité et consentement -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <i class="fas fa-shield-alt"></i>
+                        Confidentialité et consentement
+                    </h2>
+                    
+                    <div class="consent-checkboxes">
+                        <div class="consent-option">
+                            <input type="checkbox" id="consent-data" name="consent-data" required>
+                            <label for="consent-data">
+                                J'accepte que mes données anonymes soient utilisées pour m'orienter vers les services appropriés *
+                            </label>
+                        </div>
+                        
+                        <div class="consent-option">
+                            <input type="checkbox" id="consent-statistics" name="consent-statistics">
+                            <label for="consent-statistics">
+                                J'accepte que mes données anonymes soient utilisées pour les statistiques nationales sur les VBG
+                            </label>
+                        </div>
+                        
+                        <div class="consent-option">
+                            <input type="checkbox" id="consent-terms" name="consent-terms" required>
+                            <label for="consent-terms">
+                                J'ai lu et j'accepte la <a href="#" target="_blank">politique de confidentialité</a> *
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="security-warning">
+                        <i class="fas fa-lock"></i>
+                        <p>Votre signalement sera chiffré et traité par nos modérateurs formés. Aucune information personnelle n'est collectée.</p>
+                    </div>
+                </div>
+                
+                <!-- Boutons de soumission -->
+                <div class="form-actions">
+                    <button type="button" id="clear-form" class="btn btn-secondary">
+                        <i class="fas fa-eraser"></i> Effacer le formulaire
+                    </button>
+                    <button type="submit" id="submit-report" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Envoyer le signalement anonyme
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- What happens next -->
+    <section class="next-steps">
+        <div class="container">
+            <h2 class="section-title">Que se passe-t-il après votre signalement ?</h2>
+            
+            <div class="steps-timeline">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>1. Réception et chiffrement</h3>
+                        <p>Votre signalement est immédiatement chiffré et transmis à nos modérateurs.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>2. Analyse par nos équipes</h3>
+                        <p>Nos modérateurs formés analysent la situation et déterminent l'orientation appropriée.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>3. Orientation vers des services</h3>
+                        <p>Vous êtes orienté(e) vers les services compétents (ONG, police, centres médicaux).</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>4. Suivi anonyme (optionnel)</h3>
+                        <p>Si vous l'avez choisi, un suivi anonyme peut être proposé via notre plateforme.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-shield-heart"></i>
+                        <span>VBG Bénin</span>
+                    </div>
+                    <p class="footer-description">
+                        Plateforme nationale d'information, de dénonciation anonyme et d'accompagnement des victimes de Violences Basées sur le Genre au Bénin.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Liens rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="informations.html">Informations sur les VBG</a></li>
+                        <li><a href="denonciation.html">Dénonciation anonyme</a></li>
+                        <li><a href="temoignages.html">Espace témoignages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="chatbot.html">Chatbot d'assistance</a></li>
+                        <li><a href="annuaire.html">Annuaire des services</a></li>
+                        <li><a href="contact.html">Contactez-nous</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone-alt"></i> Numéro vert : <strong>138</strong></li>
+                        <li><i class="fas fa-envelope"></i> Email : contact@vgb-benin.bj</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Cotonou, Bénin</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Plateforme VBG Bénin. Tous droits réservés.</p>
+                <p>Ce site respecte votre anonymat et protège vos données.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de confirmation -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-check-circle"></i> Signalement envoyé</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Votre signalement a été reçu</h3>
+                <p>Votre message a été chiffré et transmis à nos équipes de modérateurs. Vous recevrez une orientation vers les services appropriés dans les 24 à 48 heures.</p>
+                
+                <div class="modal-info">
+                    <p><strong>Numéro de référence :</strong> <span id="reference-number">VBG-2023-001</span></p>
+                    <p>Conservez ce numéro pour toute référence future.</p>
+                </div>
+                
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="modal-close-btn">Fermer</button>
+                    <button class="btn btn-primary" id="modal-print-btn">
+                        <i class="fas fa-print"></i> Imprimer cette page
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Help Button -->
+    <button class="quick-help-btn" aria-label="Aide rapide">
+        <i class="fas fa-question-circle"></i>
+        <span>Aide</span>
+    </button>
+
+    <script src="../script.js"></script>
+    <script src="pages.js"></script>
+    <script>
+        // Script spécifique à la page de dénonciation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Compteur de caractères
+            const descriptionTextarea = document.getElementById('situation-description');
+            const charCount = document.getElementById('char-count');
+            
+            if (descriptionTextarea && charCount) {
+                descriptionTextarea.addEventListener('input', function() {
+                    charCount.textContent = this.value.length;
+                    
+                    if (this.value.length > 1000) {
+                        charCount.style.color = 'var(--danger-color)';
+                    } else if (this.value.length > 800) {
+                        charCount.style.color = 'var(--warning-color)';
+                    } else {
+                        charCount.style.color = 'var(--gray-dark)';
+                    }
+                });
+            }
+            
+            // Gestion des départements et communes
+            const departmentSelect = document.getElementById('department');
+            const communeSelect = document.getElementById('commune');
+            
+            if (departmentSelect && communeSelect) {
+                const communesByDepartment = {
+                    'atlantique': ['Abomey-Calavi', 'Allada', 'Kpomassè', 'Ouidah', 'Sô-Ava', 'Toffo', 'Tori-Bossito', 'Zè'],
+                    'littoral': ['Cotonou'],
+                    'oueme': ['Adjarra', 'Adjohoun', 'Aguégués', 'Akpro-Missérété', 'Avrankou', 'Bonou', 'Dangbo', 'Porto-Novo', 'Sèmè-Kpodji'],
+                    'plateau': ['Ifangni', 'Adja-Ouèrè', 'Kétou', 'Pobè', 'Sakété'],
+                    'zou': ['Abomey', 'Agbangnizoun', 'Bohicon', 'Covè', 'Djidja', 'Ouinhi', 'Za-Kpota', 'Zangnanado', 'Zogbodomey']
+                };
+                
+                departmentSelect.addEventListener('change', function() {
+                    const selectedDept = this.value;
+                    communeSelect.innerHTML = '<option value="">Sélectionnez une commune</option>';
+                    
+                    if (selectedDept && communesByDepartment[selectedDept]) {
+                        communeSelect.disabled = false;
+                        communesByDepartment[selectedDept].forEach(commune => {
+                            const option = document.createElement('option');
+                            option.value = commune.toLowerCase().replace(/ /g, '-');
+                            option.textContent = commune;
+                            communeSelect.appendChild(option);
+                        });
+                    } else {
+                        communeSelect.disabled = true;
+                    }
+                });
+            }
+            
+            // Affichage conditionnel du champ email
+            const contactSelect = document.getElementById('contact-preference');
+            const emailField = document.getElementById('email-field');
+            
+            if (contactSelect && emailField) {
+                contactSelect.addEventListener('change', function() {
+                    if (this.value === 'email') {
+                        emailField.style.display = 'block';
+                        document.getElementById('anonymous-email').required = true;
+                    } else {
+                        emailField.style.display = 'none';
+                        document.getElementById('anonymous-email').required = false;
+                    }
+                });
+            }
+            
+            // Effacer le formulaire
+            const clearBtn = document.getElementById('clear-form');
+            const reportingForm = document.getElementById('reporting-form');
+            
+            if (clearBtn && reportingForm) {
+                clearBtn.addEventListener('click', function() {
+                    if (confirm('Êtes-vous sûr de vouloir effacer tout le formulaire ?')) {
+                        reportingForm.reset();
+                        charCount.textContent = '0';
+                        charCount.style.color = 'var(--gray-dark)';
+                        
+                        if (communeSelect) {
+                            communeSelect.disabled = true;
+                            communeSelect.innerHTML = '<option value="">Sélectionnez d\'abord le département</option>';
+                        }
+                        
+                        if (emailField) {
+                            emailField.style.display = 'none';
+                        }
+                    }
+                });
+            }
+            
+            // Soumission du formulaire
+            const submitBtn = document.getElementById('submit-report');
+            const confirmationModal = document.getElementById('confirmation-modal');
+            
+            if (submitBtn && reportingForm && confirmationModal) {
+                reportingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Validation supplémentaire
+                    const violenceTypes = document.querySelectorAll('input[name="violence-type"]:checked');
+                    if (violenceTypes.length === 0) {
+                        alert('Veuillez sélectionner au moins un type de violence');
+                        return;
+                    }
+                    
+                    // Générer un numéro de référence
+                    const refNumber = 'VBG-' + new Date().getFullYear() + '-' + 
+                                     Math.floor(1000 + Math.random() * 9000);
+                    document.getElementById('reference-number').textContent = refNumber;
+                    
+                    // Afficher la modal
+                    confirmationModal.style.display = 'block';
+                    
+                    // Réinitialiser le formulaire après soumission
+                    setTimeout(() => {
+                        reportingForm.reset();
+                        if (charCount) charCount.textContent = '0';
+                        if (communeSelect) {
+                            communeSelect.disabled = true;
+                            communeSelect.innerHTML = '<option value="">Sélectionnez d\'abord le département</option>';
+                        }
+                        if (emailField) emailField.style.display = 'none';
+                    }, 100);
+                });
+            }
+            
+            // Fermer la modal
+            const modalCloseBtn = document.querySelector('.modal-close');
+            const modalCloseBtn2 = document.getElementById('modal-close-btn');
+            const modalPrintBtn = document.getElementById('modal-print-btn');
+            
+            function closeModal() {
+                confirmationModal.style.display = 'none';
+            }
+            
+            if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+            if (modalCloseBtn2) modalCloseBtn2.addEventListener('click', closeModal);
+            
+            if (modalPrintBtn) {
+                modalPrintBtn.addEventListener('click', function() {
+                    window.print();
+                });
+            }
+            
+            // Fermer la modal en cliquant à l'extérieur
+            window.addEventListener('click', function(e) {
+                if (e.target === confirmationModal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
